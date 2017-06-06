@@ -2,26 +2,9 @@
   <div>
     <div v-if="results">
       <div class="result-textbox">
-        <h1>Search result: {{ results.length }}</h1>
+        <h1>Found: {{ results.length }} Results</h1>
       </div>
-      <div class="columns">
-        <searchresult v-for="index in 4" v-bind:result="results[index-1].artistName"></searchresult>
-      </div>
-      <div class="columns" v-if="results.length > 4">
-        <searchresult v-for="index in 4" v-bind:result="results[index+3].artistName"></searchresult>
-      </div>
-      <div class="columns" v-if="results.length > 8">
-        <searchresult v-for="index in 4" v-bind:result="results[index].artistName"></searchresult>
-      </div>
-      <div class="columns" v-if="results.length > 12"
-        <searchresult v-for="index in 4" v-bind:result="results[index-1].artistName"></searchresult>
-      </div>
-      <div class="columns" v-if="results.length > 16">
-        <searchresult v-for="index in 4" v-bind:result="results[index-1].artistName"></searchresult>
-      </div>
-      <div class="columns" v-if="results.length > 20">
-        <searchresult v-for="index in 4" v-bind:result="results[index-1].artistName"></searchresult>
-      </div>
+      <searchresult v-for="result in results" v-bind:result="result"></searchresult>
     </div>
   </div>
 </template>
