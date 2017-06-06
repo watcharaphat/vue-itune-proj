@@ -4,7 +4,7 @@
       <div class="result-textbox">
         <h1>Found: {{ results.length }} Results</h1>
       </div>
-      <searchresult v-for="result in results" v-bind:result="result"></searchresult>
+      <searchresult v-for="result in results" :key="result.trackId" v-bind:result="result"></searchresult>
     </div>
   </div>
 </template>
