@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="columns">
-      <div class="column is-three-quarters">
+      <div class="column is-10">
         <div class="field">
           <p class="control">
             <form v-on:submit.prevent="search">
@@ -18,40 +18,48 @@
       </div>
     </div>
 
-    <div class="columns">
-      <h1>We will continue here.</h1>
+    <div class="columns result-area">
+      <div class="column is-11">
+        <searchresultapp v-bind:results="data.results"></searchresultapp>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-const api = 'https://itunes.apple.com/search?term='
+  import searchresultapp from './SearchResultApp'
 
-export default {
-  data () {
-    return {
-      input: this.input,
-      searchString: '',
-      data: [],
-      errors: []
-    }
-  },
-  methods: {
-    search () {
-      this.searchString = this.input.replace(/ /g, '+')
-      let url = api + this.searchString
-      console.log(url)
-      this.axios.get(url).then((response) => {
-        console.log(response.data.results[0])
-        this.data = response.data
-      }).catch(error => {
-        this.error.push(error)
-        this.data = []
-        alert('Can\t fetch data.')
-      })
+  const api = 'https://itunes.apple.com/search?term='
+  const limit = '&limit=24'
+
+  export default {
+    data () {
+      return {
+        input: this.input,
+        searchString: '',
+        data: [],
+        errors: []
+      }
+    },
+    components: {
+      searchresultapp
+    },
+    methods: {
+      search () {
+        this.searchString = this.input.replace(/ /g, '+')
+        let url = api + this.searchString + limit
+        console.log(url)
+        this.axios.get(url).then((response) => {
+          console.log(response.data.results[0])
+          this.data = response.data
+        }).catch(error => {
+          this.error.push(error)
+          this.data = []
+          alert('Can\'t fetch data.')
+        })
+      }
     }
   }
-}
 </script>
 
 <style>
@@ -63,5 +71,8 @@ export default {
   }
   .input {
     width: 80%;
+  }
+  .result-area {
+    margin-top: 20px;
   }
 </style>

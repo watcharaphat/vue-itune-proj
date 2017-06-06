@@ -13,12 +13,16 @@
 
     <div class="container margin-top-60">
       <div class="columns">
-        <div class="column is-one-third">  
+        <div class="column is-3">  
           <menuapp v-on:updateview="updateView"></menuapp>
         </div>
         <div class="column auto center">
-          <itunesapp v-if="selectedApp===1"></itunesapp>
-          <dota2app v-if="selectedApp===2"></dota2App>
+          <keep-alive>
+            <itunesapp v-if="selectedApp===1"></itunesapp>
+          </keep-alive>
+          <keep-alive>
+            <dota2app v-if="selectedApp===2"></dota2App>
+          </keep-alive>
         </div>
       </div>
     </div>
