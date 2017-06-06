@@ -1,18 +1,23 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <navibar></navibar>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import navibar from './components/NavBar/NavBar'
+
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    navibar
+  }
 }
 </script>
 
 <style>
-#app {
+.app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

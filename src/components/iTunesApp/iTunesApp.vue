@@ -1,0 +1,67 @@
+<template>
+  <div>
+    <div class="columns">
+      <div class="column">
+        <h1>Search from iTunes</h1>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-three-quarters">
+        <div class="field">
+          <p class="control">
+            <form v-on:submit.prevent="search">
+              <input class="input" type="text" placeholder="artist, trackname, etc." v-model="input"></input>
+              <button class="button is-primary button-search">Search</button>
+            </form>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns">
+      <h1>We will continue here.</h1>
+    </div>
+  </div>
+</template>
+
+<script>
+const api = 'https://itunes.apple.com/search?term='
+
+export default {
+  data () {
+    return {
+      input: this.input,
+      searchString: '',
+      data: [],
+      errors: []
+    }
+  },
+  methods: {
+    search () {
+      this.searchString = this.input.replace(/ /g, '+')
+      let url = api + this.searchString
+      console.log(url)
+      this.axios.get(url).then((response) => {
+        console.log(response.data.results[0])
+        this.data = response.data
+      }).catch(error => {
+        this.error.push(error)
+        this.data = []
+        alert('Can\t fetch data.')
+      })
+    }
+  }
+}
+</script>
+
+<style>
+  h1 {
+    font-size: 1.5em;
+  }
+  .button-search {
+    float: right;
+  }
+  .input {
+    width: 80%;
+  }
+</style>
