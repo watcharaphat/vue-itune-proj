@@ -50,7 +50,6 @@ export default {
   methods: {
     updateView (selectedApp) {
       this.selectedApp = selectedApp
-      console.log('bobo')
       console.log(selectedApp)
     }
   }
@@ -58,6 +57,9 @@ export default {
 </script>
 
 <style>
+  * {
+    font-family: 'Roboto', sans-serif;
+  }
   .hero-body {
     background-color: #00D1B2;
   }

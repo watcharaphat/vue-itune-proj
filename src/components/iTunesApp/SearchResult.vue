@@ -41,11 +41,13 @@
     padding-left: 24%;
   }
   .title {
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: 400;
     padding: 0 0 0 0;
-    margin: 0 0 15 0;
+    margin: 7px 0 15px 0;
   }
   .sub-text {
     margin: 7px 0 0 0;
+    font-size: 14px;
   }
 </style>
