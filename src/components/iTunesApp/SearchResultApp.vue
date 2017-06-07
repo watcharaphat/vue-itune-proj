@@ -2,7 +2,9 @@
   <div>
     <div v-if="results">
       <div class="result-textbox">
-        <h1>Found: {{ results.length }} Results</h1>
+        <div class="column is-8">
+          <div class="found-textbox">Found: {{ results.length }} Results</div>
+        </div>
       </div>
       <searchresult v-for="result in results" :key="result.trackId" v-bind:result="result"></searchresult>
     </div>
@@ -14,11 +16,6 @@
 
   export default {
     props: ['results'],
-    data () {
-      return {
-        msg: 'Hello, result'
-      }
-    },
     components: {
       searchresult
     }
@@ -27,6 +24,11 @@
 
 <style>
   .result-textbox {
+    margin-bottom: 30px;
+  }
+  .found-textbox {
+    font-size: 20px;
+    float: left;
     margin-bottom: 30px;
   }
 </style>

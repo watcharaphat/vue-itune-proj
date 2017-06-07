@@ -19,12 +19,7 @@
 
 <script>
   export default {
-    props: ['result'],
-    data () {
-      return {
-        msg: 'Hello, result'
-      }
-    }
+    props: ['result']
   }
 </script>
 
