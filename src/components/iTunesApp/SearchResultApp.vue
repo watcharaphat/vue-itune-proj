@@ -3,9 +3,7 @@
     <div v-if="results">
       <div class="columns">
         <div class="result-textbox">
-          <div class="column is-8">
-            <div class="found-textbox">Found: {{ results.length }} Results</div>
-          </div>
+          <div class="found-textbox">Found: {{ results.length }} Results</div>
         </div>
       </div>
       <searchresult v-for="result in results" :key="result.trackId" v-bind:result="result"></searchresult>
@@ -30,7 +28,8 @@
   }
   .found-textbox {
     font-size: 20px;
-    float: left;
-    margin-bottom: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 15px;
   }
 </style>
