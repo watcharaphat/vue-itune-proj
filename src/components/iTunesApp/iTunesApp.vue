@@ -5,13 +5,13 @@
         <h1>Search from iTunes</h1>
       </div>
     </div>
-    
+
     <div class="columns">
       <div class="column is-10">
         <div class="field">
           <p class="control">
             <form v-on:submit.prevent="search">
-              <input class="input" type="text" placeholder="artist, trackname, etc." v-model="input"></input>
+              <input class="input" type="text" placeholder="artist, trackname, album and etc." v-model="input"></input>
               <button class="button is-primary button-search">Search</button>
             </form>
           </p>
