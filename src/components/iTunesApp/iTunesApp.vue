@@ -30,7 +30,7 @@
   import searchresultapp from './SearchResultApp'
 
   const api = 'https://itunes.apple.com/search?term='
-  const limit = '&limit=24'
+  const limit = '&limit=25'
 
   export default {
     data () {
@@ -48,9 +48,7 @@
       search () {
         this.searchString = this.input.replace(/ /g, '+')
         let url = api + this.searchString + limit
-        console.log(url)
         this.axios.get(url).then((response) => {
-          console.log(response.data.results[0])
           this.data = response.data
         }).catch(error => {
           this.error.push(error)

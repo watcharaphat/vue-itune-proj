@@ -3,10 +3,10 @@
     <div class="hero-body">
       <div class="container">
         <p class="title">
-          iTunes Search App
+          {{ titles[selectedApp-1] }}
         </p>
         <p class="subtitle">
-          A Vue.js Application to search artist, music, alubum and etc. from iTunes.
+          {{ subTitles[selectedApp-1] }}
         </p>
       </div>
     </div>
@@ -43,7 +43,9 @@ export default {
   },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
+      titles: ['iTunes Search App', 'Dota 2 API App'],
+      subTitles: ['A Vue.js Application to search artist, music, alubum and etc. from iTunes.',
+        'A Vue.js Applicatoon to search from Dota 2.'],
       selectedApp: menuapp.data().selectedApp
     }
   },
@@ -68,5 +70,8 @@ export default {
   }
   .margin-top-60 {
     margin-top: 60px;
+  }
+  .subtitle {
+    padding-top: 10px;
   }
 </style>
