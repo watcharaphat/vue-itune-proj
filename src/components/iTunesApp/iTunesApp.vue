@@ -5,6 +5,7 @@
         <h1>Search from iTunes</h1>
       </div>
     </div>
+    
     <div class="columns">
       <div class="column is-10">
         <div class="field">
