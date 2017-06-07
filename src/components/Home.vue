@@ -52,7 +52,6 @@ export default {
   methods: {
     updateView (selectedApp) {
       this.selectedApp = selectedApp
-      console.log(selectedApp)
     }
   }
 }
