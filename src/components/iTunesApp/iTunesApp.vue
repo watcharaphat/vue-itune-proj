@@ -1,5 +1,6 @@
 <template>
   <div>
+  
     <div class="columns">
       <div class="column">
         <h1>Search from iTunes</h1>
@@ -24,6 +25,7 @@
         <searchresultapp v-bind:results="data.results"></searchresultapp>
       </div>
     </div>
+
   </div>
 </template>
 

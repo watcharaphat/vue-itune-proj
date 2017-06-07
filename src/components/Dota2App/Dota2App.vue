@@ -7,7 +7,7 @@
     </div>
 
     <div class="columns">
-      <div class="column is-6">
+      <div class="column is-8">
         <div class="field">
           <p class="control">
             <form v-on:submit.prevent="search">
@@ -16,6 +16,13 @@
             </form>
           </p>
         </div>
+      </div>
+    </div>
+    <p class="example-input">ex. 143064711</p>
+
+    <div class="columns result-area">
+      <div class="column is-11">
+        <h1>We will see here.</h1>
       </div>
     </div>
 
@@ -58,5 +65,12 @@
     -moz-appearance: none;
     appearance: none;
     margin: 0; 
-}
+  }
+  .example-input {
+    color: grey;
+    position: relative;
+    font-size: 14px;
+    top: -20px;
+    left: 5px;
+  }
 </style>
