@@ -22,7 +22,7 @@
 
     <div class="columns result-area">
       <div class="column is-11">
-        <h1>We will see here.</h1>
+        <topheroapp v-bind:heroes="data"></topheroapp>
       </div>
     </div>
 
@@ -30,6 +30,8 @@
 </template>
 
 <script>
+  import topheroapp from './TopHeroApp'
+
   const api = 'https://api.opendota.com/api/players/'
   const field = '/heroes'
 
@@ -41,13 +43,16 @@
         errors: []
       }
     },
+    components: {
+      topheroapp
+    },
     methods: {
       search () {
         this.searchString = this.input.replace(/ /g, '+')
         let url = api + this.input + field
         this.axios.get(url).then((response) => {
           this.data = response.data
-          console.log(this.data)
+          console.log(this.data[0])
         }).catch(error => {
           this.error.push(error)
           this.data = []
