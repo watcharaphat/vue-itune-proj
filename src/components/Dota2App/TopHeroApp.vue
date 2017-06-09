@@ -8,7 +8,7 @@
       </div>
 
       <div class="columns is-multiline">
-        <tophero v-for="index in 10" v-bind:hero="heroes[index-1]"></tophero>
+        <tophero v-for="index in 10" :key="index" v-bind:hero="heroes[index-1]"></tophero>
       </div>
     </div>
   </div>
