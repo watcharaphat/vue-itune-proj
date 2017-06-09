@@ -1,23 +1,26 @@
 <template>
   <div>
     <div v-if="heroes[0]">
-      <div v-on:click="print">print the results[0]</div>
+      <div class="columns">
+        <div class="column">
+          <h1>Your most played heroes</h1>
+        </div>
+      </div>
+
+      <div class="columns is-multiline">
+        <tophero v-for="index in 10" v-bind:hero="heroes[index-1]"></tophero>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+  import tophero from './TopHero'
+  
   export default {
     props: ['heroes'],
-    data () {
-      return {
-        msg: 'Hello from the other side'
-      }
-    },
-    methods: {
-      print () {
-        alert(this.heroes[0])
-      }
+    components: {
+      tophero
     }
   }
 </script>

@@ -1,18 +1,30 @@
 <template>
   <div>
-    <div v-if="results">
-      <p>{{ msg }}</p>
-    </div>
+    <div>{{ hero }}</div>
+    <br /><br /><br />
   </div>
 </template>
 
 <script>
+  const api = 'https://api.opendota.com/api/heroes'
+
   export default {
-    props: ['results'],
+    props: ['hero'],
     data () {
       return {
-        msg: 'Hello from the other side'
+        heroes: [],
+        errors: [],
+        map: ([])
       }
+    },
+    created () {
+      this.axios.get(api).then((response) => {
+        this.heroes = response.data
+      }).catch(error => {
+        this.error.push(error)
+        this.heroes = []
+        alert('Can\'t fetch data.')
+      })
     }
   }
 </script>

@@ -48,7 +48,6 @@
     },
     methods: {
       search () {
-        this.searchString = this.input.replace(/ /g, '+')
         let url = api + this.input + field
         this.axios.get(url).then((response) => {
           this.data = response.data
