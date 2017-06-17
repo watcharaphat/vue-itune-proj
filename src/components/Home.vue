@@ -13,7 +13,7 @@
 
     <div class="container margin-top-60">
       <div class="columns">
-        <div class="column is-3">  
+        <div class="column is-3">
           <menuapp v-on:updateview="updateView"></menuapp>
         </div>
         <div class="column auto center">
@@ -44,7 +44,7 @@ export default {
   data () {
     return {
       titles: ['iTunes Search App', 'Dota 2 API App'],
-      subTitles: ['A Vue.js Application to search artist, music, alubum and etc. from iTunes.',
+      subTitles: ['A Vue.js Application to search artist, music, album and etc. from iTunes.',
         'A Vue.js Applicatoon to search from Dota 2.'],
       selectedApp: menuapp.data().selectedApp
     }
