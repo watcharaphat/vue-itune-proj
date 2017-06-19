@@ -6,14 +6,15 @@
 </template>
 
 <script>
-import navibar from './components/NavBar/NavBar'
-
-export default {
-  name: 'app',
-  components: {
-    navibar
+  import navibar from './components/NavBar/NavBar'
+  import 'animate.css'
+  
+  export default {
+    name: 'app',
+    components: {
+      navibar
+    }
   }
-}
 </script>
 
 <style>

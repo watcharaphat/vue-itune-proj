@@ -1,5 +1,5 @@
 <template>
-  <div class="columns">
+  <div class="columns animated fadeIn">
     <a class="column card is-8" :href="result.previewUrl">
         <img class="card-img" :src="result.artworkUrl100" alt="Image"/>
         <div class="result-textbox">
