@@ -18,7 +18,6 @@
     data () {
       return {
         value: [
-          { name: 'Vue.js', language: 'JavaScript' }
         ],
         options: [
           { name: 'Vue.js', language: 'JavaScript' },
